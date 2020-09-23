@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lab Pgm 1</title>
+    <style>
+      body {
+        position: relative;
+        top: 300px;
+        left: 600px;
+        animation-name: bodyanim;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+      }
+
+      .title {
+        animation-duration: 3s;
+        animation-name: slidein;
+
+        padding: 10px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        width: 400px;
+        color: black;
+        border: solid black 1px;
+      }
+
+      .title:hover {
+        color: white;
+        background-color: teal;
+      }
+
+      .main {
+        border-radius: 20px;
+        position: relative;
+        left: 20px;
+        width: 350px;
+        margin-top: 30px;
+        padding: 20px;
+        background-color: teal;
+      }
+
+      .table {
+        position: relative;
+        left: 60px;
+      }
+
+      .row {
+        justify-content: center;
+        align-items: center;
+        display: flwx;
+        flex-direction: column;
+      }
+
+      input[type="text"] {
+        border-radius: 5px;
+        text-align: right;
+        background-color: white;
+        width: 94%;
+      }
+      input[type="button"] {
+        border-radius: 5px;
+        background-color: teal;
+        color: black;
+        padding: 10px;
+        width: 50px;
+      }
+
+      @keyframes bodyanim {
+        0% {
+          background-image: linear-gradient(
+            to right,
+            #ff8177 0%,
+            #ff867a 0%,
+            #ff8c7f 21%
+          );
+        }
+        25% {
+          background-image: linear-gradient(
+            to right,
+            #f99185 52%,
+            #cf556c 78%,
+            #b12a5b 100%
+          );
+        }
+        75% {
+          background-image: linear-gradient(
+            to right,
+            #ff8177 0%,
+            #ff867a 0%,
+            #ff8c7f 21%
+          );
+        }
+        100% {
+          background-image: linear-gradient(
+            to right,
+            #f99185 52%,
+            #cf556c 78%,
+            #b12a5b 100%
+          );
+        }
+      }
+    </style>
+    <script>
+      function disp(val) {
+        document.getElementById("sdm").value += val;
+      }
+      function clr() {
+        document.getElementById("sdm").value = " ";
+      }
+
+      function solve() {
+        let x = document.getElementById("sdm").value;
+        let y = eval(x);
+        document.getElementById("sdm").value = y;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="title">SDM --Javascript lab program</div>
+    <!--Ceate a table-->
+    <div class="main">
+      <table border="2" class="table">
+        <tr>
+          <td>
+            <input type="button" value="CE" onclick="clr()" />
+          </td>
+          <td colspan="3">
+            <input type="text" id="sdm" />
+          </td>
+        </tr>
+        <!-- creating buttons and assign values to it-->
+        <tr class="row">
+          <td>
+            <input type="button" value="+" onclick="disp('+')" />
+          </td>
+          <td>
+            <input type="button" value="1" onclick="disp('1')" />
+          </td>
+          <td>
+            <input type="button" value="2" onclick="disp('2')" />
+          </td>
+          <td>
+            <input type="button" value="3" onclick="disp('3')" />
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            <input type="button" value="-" onclick="disp('-')" />
+          </td>
+          <td>
+            <input type="button" value="4" onclick="disp('4')" />
+          </td>
+          <td>
+            <input type="button" value="5" onclick="disp('5')" />
+          </td>
+          <td>
+            <input type="button" value="6" onclick="disp('6')" />
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            <input type="button" value="*" onclick="disp('*')" />
+          </td>
+          <td>
+            <input type="button" value="7" onclick="disp('7')" />
+          </td>
+          <td>
+            <input type="button" value="8" onclick="disp('8')" />
+          </td>
+          <td>
+            <input type="button" value="9" onclick="disp('9')" />
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            <input type="button" value="/" onclick="disp('/')" />
+          </td>
+          <td>
+            <input type="button" value="." onclick="disp('.')" />
+          </td>
+          <td>
+            <input type="button" value="0" onclick="disp('0')" />
+          </td>
+          <td>
+            <input type="button" value="=" onclick="solve()" />
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
